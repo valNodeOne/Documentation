@@ -5,7 +5,7 @@ A documentation can be found in the [ts-relayer](https://github.com/confio/ts-re
 
 ## Step 1: Confirm Parameters:
 
-First of all we will check if both chains have ibc-transfer params enabled:
+First of all check if both chains have ibc-transfer params enabled:
 
 ```bash=
 kid q ibc-transfer params
@@ -35,7 +35,7 @@ curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
 sudo apt -y install nodejs
 ```
 
-Check if your nodejs version i 14.16.1 or later:
+Check if your nodejs version is 14.16.1 or later:
 
 ```bash=
 node  -v
@@ -43,7 +43,7 @@ node  -v
 
 ### Step 2.2: Install TS-Relayer
 
-Consider that the following command will install the latest release. This version will most likely not work with all Cosmos SDK Releases. Therefore check the compatibility at the [ts-relayer](https://github.com/confio/ts-relayer) repo.
+Consider that the following command will install the latest release. This version will most likely not work with all Cosmos SDK releases. Therefore check the compatibility at the [ts-relayer](https://github.com/confio/ts-relayer) repo.
 
 ```bash=
 sudo npm i -g @confio/relayer
@@ -91,7 +91,7 @@ To fund the wallets I sent some funds from my validator wallets:
 bandd tx bank send <fromwallet> <relayerwallet> <amount> --chain-id band-laozi-testnet4
 kid tx bank send <fromwallet> <relayerwallet> <amount> --chain-id kichain-t-4
 ```
-If you have set up a validator node for band-laozi-testnet4 you can also use their faucet according to their [documentation](https://github.com/bandprotocol/launch/blob/master/band-laozi-testnet4/README.md).
+If you did set up a validator node for band-laozi-testnet4 you can also use their faucet according to their [documentation](https://github.com/bandprotocol/launch/blob/master/band-laozi-testnet4/README.md).
 
 
 ### Step 2.5: Create Channel
@@ -148,7 +148,7 @@ As seen in the logs, the relayer will now query both chains every 60 seconds and
 
 ## Step 3: Verify Relayer
 
-To verify the Relayer we will send some TKI from kichain-t-4 to band-laozi-testnet4.
+To verify the relayer we will send some TKI from kichain-t-4 to band-laozi-testnet4.
 
 The balance of the receiving wallet on band-laozi-testnet4 before the transaction only contains uband:
 ```bash=
@@ -172,7 +172,7 @@ info: Relay 1 packets from kichain-t-4 => band-laozi-testnet4
 ...
 info: Relay 1 acks from band-laozi-testnet4 => kichain-t-4
 ```
-After the packet was sent from kichain-t-4 to band-laozi-testnet4, the acknowledgement was sent from band-laozi-testnet4 to kichain-t-4.
+The packet was sent from kichain-t-4 to band-laozi-testnet4 and afterwards the acknowledgement was sent back from band-laozi-testnet4 to kichain-t-4.
 
 As a result we can now see tki in the receiving wallet:
 
@@ -184,3 +184,5 @@ balances:
 - amount: "958750"
   denom: uband
 ```
+
+Thanks for reading and have a good day!
