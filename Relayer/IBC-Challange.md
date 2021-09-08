@@ -1,7 +1,7 @@
 # How to setup TS-Relayer for IBC between band-laozi-testnet4 and kichain-t-4
 
-This document describes how the set up IBC between band-laozi-testnet4 and kichain-t-4. The Relayer used in this documentation is the typescript implementation of an IBC Relayer.
-Its documentation can be found here: https://github.com/confio/ts-relayer
+This document describes how the set up IBC between band-laozi-testnet4 and kichain-t-4. The Relayer used in this documentation is the typescript implementation of an [IBC Relayer.](https://docs.cosmos.network/master/ibc/relayer.html#)
+A documentation can be found in the [ts-relayer](https://github.com/confio/ts-relayer) repo.
 
 ## Step 1: Confirm Parameters:
 
@@ -43,7 +43,7 @@ node  -v
 
 ### Step 2.2: Install TS-Relayer
 
-Consider that the following command will install the latest release. This version will most likely not work with all Cosmos SDK Releases. Therefore check the compatibility at the TS-Relayer Repo linked above.
+Consider that the following command will install the latest release. This version will most likely not work with all Cosmos SDK Releases. Therefore check the compatibility at the [ts-relayer](https://github.com/confio/ts-relayer) repo.
 
 ```bash=
 sudo npm i -g @confio/relayer
@@ -51,9 +51,7 @@ sudo npm i -g @confio/relayer
 
 ### Step 2.3: Initialise TS-Relayer
 
-Before initialising the Relayer add the following chain configurations to ```/home/<USERNAME>/.ibc-setup/registry.yaml ```
-
-Since iam running the Relayer on the same Server as my band node iam using ```http://localhost:26657``` for the rpc.
+Before initialising the Relayer append the following chain configurations to ```/home/<USERNAME>/.ibc-setup/registry.yaml ```
 
 ```bash=
   band:
@@ -62,7 +60,7 @@ Since iam running the Relayer on the same Server as my band node iam using ```ht
     gas_price: 0.005uband
     ics20_port: 'transfer'
     rpc:
-      - http://localhost:26657
+      - https://rpc.laozi-testnet4.bandchain.org
   KI:
     chain_id: kichain-t-4
     prefix: tki
